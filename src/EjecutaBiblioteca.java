@@ -7,12 +7,13 @@ public class EjecutaBiblioteca {
     
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        Carreras listaCarreras[]=new Carreras[5];
+        
+        /*Carreras listaCarreras[]=new Carreras[5];
         listaCarreras[0]=new Carreras("Ingenieria en Tecnolias de la Informacion","Ernesto Salvador",10);
         listaCarreras[1]=new Carreras("Economia","Diana Checa",8);
         listaCarreras[2]=new Carreras("Licenciatura en Educacion Inicial","Diego Cornejo",8);
         listaCarreras[3]=new Carreras("Licenciatura en Idiomas","Santiago Icaza",8);
-        listaCarreras[4]=new Carreras("Turismo","Jorge Naranjo",10);
+        listaCarreras[4]=new Carreras("Turismo","Jorge Naranjo",10);*/
         
         menu();
     }

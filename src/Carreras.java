@@ -1,7 +1,11 @@
 
+import java.util.ArrayList;
+
+
 public class Carreras {
     private String nombreCarrera, nombreDirector;
     private int duracionCarrera;
+    private ArrayList<Estudiante> listadoE;
 
     public Carreras(String nombreCarrera, String nombreDirector, int duracionCarrera) {
         this.nombreCarrera = nombreCarrera;
@@ -13,26 +17,15 @@ public class Carreras {
         return nombreCarrera;
     }
 
-    public void setNombreCarrera(String nombreCarrera) {
-        this.nombreCarrera = nombreCarrera;
-    }
-
     public String getNombreDirector() {
         return nombreDirector;
-    }
-
-    public void setNombreDirector(String nombreDirector) {
-        this.nombreDirector = nombreDirector;
     }
 
     public int getDuracionCarrera() {
         return duracionCarrera;
     }
-
-    public void setDuracionCarrera(int duracionCarrera) {
-        this.duracionCarrera = duracionCarrera;
+    
+    public void addEstudiante(ArrayList<Estudiante> listadoE){
+        this.listadoE=listadoE;        
     }
-    
-    
-    
 }
