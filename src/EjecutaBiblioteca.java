@@ -1,28 +1,15 @@
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 
 public class EjecutaBiblioteca {
     
-    public static void main(String[] args) {
-        
-        
-        /*Carreras listaCarreras[]=new Carreras[5];
-        listaCarreras[0]=new Carreras("Ingenieria en Tecnolias de la Informacion","Ernesto Salvador",10);
-        listaCarreras[1]=new Carreras("Economia","Diana Checa",8);
-        listaCarreras[2]=new Carreras("Licenciatura en Educacion Inicial","Diego Cornejo",8);
-        listaCarreras[3]=new Carreras("Licenciatura en Idiomas","Santiago Icaza",8);
-        listaCarreras[4]=new Carreras("Turismo","Jorge Naranjo",10);*/
-        
-        menu();
-    }
-    
     public static void menu(){
+        ArrayList<Estudiante> estudiante = new ArrayList();
         Scanner entrada = new Scanner(System.in);
         int opcion;
-       
-        
         
         do{
             System.out.println("..*MENU*..");
@@ -36,11 +23,11 @@ public class EjecutaBiblioteca {
                 case 1:
                     String cedula;
                     boolean validar;
+                    entrada.nextLine();
+                    System.out.print("Ingrese un numero de cédula del estudiante nuevo: ");
                     cedula = entrada.nextLine();
                     Estudiante est = new Estudiante(cedula,"juan","masculino");
-                    System.out.print("Ingrese un numero de cédula para validar: ");
-                    
-                           
+                    List<Estudiante> estud = new ArrayList<Estudiante>();
                     validar=est.validarCedula(cedula);
         
                     if(validar){
@@ -65,4 +52,34 @@ public class EjecutaBiblioteca {
             }
         }while(opcion!=4);
     }
+    
+    public static void llenarE(Estudiante[] estud){
+        Scanner sc = new Scanner(System.in);
+        String nom, cc, gen;
+        for(int i=0; i<estud.length;i++){
+            System.out.println("Nombre Estudiante No "+(i+1));
+            nom = sc.nextLine();
+            System.out.println("Cedula Estudiante No "+(i+1));
+            cc = sc.nextLine();
+            System.out.println("Estudiante No "+(i+1));
+            gen= sc.nextLine();
+            estud[i] =  new Estudiante(cc,nom,gen);
+            //limpia el buffer
+            sc.nextLine();
+        }  
+    } 
+    
+    public static void main(String[] args) {
+        
+        
+        /*Carreras listaCarreras[]=new Carreras[5];
+        listaCarreras[0]=new Carreras("Ingenieria en Tecnolias de la Informacion","Ernesto Salvador",10);
+        listaCarreras[1]=new Carreras("Economia","Diana Checa",8);
+        listaCarreras[2]=new Carreras("Licenciatura en Educacion Inicial","Diego Cornejo",8);
+        listaCarreras[3]=new Carreras("Licenciatura en Idiomas","Santiago Icaza",8);
+        listaCarreras[4]=new Carreras("Turismo","Jorge Naranjo",10);*/
+        
+        menu();
+    }
+    
 }
