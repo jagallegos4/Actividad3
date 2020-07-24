@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class EjecutaBiblioteca {
     
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
+        
         
         /*Carreras listaCarreras[]=new Carreras[5];
         listaCarreras[0]=new Carreras("Ingenieria en Tecnolias de la Informacion","Ernesto Salvador",10);
@@ -21,20 +21,37 @@ public class EjecutaBiblioteca {
     public static void menu(){
         Scanner entrada = new Scanner(System.in);
         int opcion;
-        System.out.println("..*MENU*..");
-        System.out.println("1. Ingrese un alumno de una carrera");
-        System.out.println("2. Crear un prestamo");
-        System.out.println("3. Reportes por estudiante");
-        System.out.println("4. Salir");
-        System.out.print("Ingrese una opcion: ");        
-        opcion=entrada.nextInt();
+       
+        
+        
         do{
+            System.out.println("..*MENU*..");
+            System.out.println("1. Ingrese un alumno de una carrera");
+            System.out.println("2. Crear un prestamo");
+            System.out.println("3. Reportes por estudiante");
+            System.out.println("4. Salir");
+            System.out.print("Ingrese una opcion: ");        
+            opcion=entrada.nextInt();
             switch(opcion){
                 case 1:
+                    String cedula;
+                    boolean validar;
+                    cedula = entrada.nextLine();
+                    Estudiante est = new Estudiante(cedula,"juan","masculino");
+                    System.out.print("Ingrese un numero de cédula para validar: ");
                     
+                           
+                    validar=est.validarCedula(cedula);
+        
+                    if(validar){
+                        System.out.println("La cedula es valida");
+                    }else{
+                    System.out.println("La cedula no es valida");
+                    }
                     break;                    
                 case 2:
-                    
+                    System.out.print("Ingrese el numero de cedula del estudiante a"
+                            + "asignar el material: ");
                     break;
                 case 3:
                     

@@ -2,7 +2,7 @@
 public class Estudiante {
     private String cedula, nombre, genero;
 
-    public Estudiante(String cedula, String nombre, String genero, int numObj) {
+    public Estudiante(String cedula, String nombre, String genero) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.genero = genero;
@@ -36,8 +36,10 @@ public class Estudiante {
             acum=((suma/10)+1)*10;
             resta=acum-suma;
         }
-        int ultimo=Integer.parseInt(cedula.charAt(9)+"");
+        int digitoVerificador=Integer.parseInt(cedula.charAt(9)+"");
+        if(digitoVerificador==resta){
+            return true;
+        }else           
         return false;
     }
-    
 }

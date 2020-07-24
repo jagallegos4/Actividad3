@@ -28,4 +28,13 @@ public class Carreras {
     public void addEstudiante(ArrayList<Estudiante> listadoE){
         this.listadoE=listadoE;        
     }
+    
+    public void mostrarEstudiante(){
+        System.out.println("Lista de Estudiantes");
+        for(int i=0;i<listadoE.size();i++){
+            System.out.print("Nombre: "+listadoE.get(i).getNombre()
+                    +"\nNo de Cedula: "+listadoE.get(i).getCedula()
+                    +"\nGenero: "+listadoE.get(i).getGenero());
+        }
+    }
 }
