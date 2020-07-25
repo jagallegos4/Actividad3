@@ -6,6 +6,27 @@ import java.util.Scanner;
 
 public class EjecutaBiblioteca {
     
+    ArrayList<Carreras> listaCarreras = new ArrayList<Carreras>();
+    ArrayList<Libro> listaLibro = new ArrayList<Libro>();
+    ArrayList<AudioVisuales> listaAV = new ArrayList<AudioVisuales>();
+    static Carreras carrera1 =new Carreras("Ingenieria en Tecnolias de la Informacion","Ernesto Salvador",10);
+    static Carreras carrera2 =new Carreras("Economia","Diana Checa",8);
+    static Carreras carrera3 =new Carreras("Licenciatura en Educacion Inicial","Diego Cornejo",8);
+    static Carreras carrera4 =new Carreras("Licenciatura en Contabilidad y Auditoria","Santiago Icaza",8);
+    static Carreras carrera5 =new Carreras("Ingenieria Electronica","Jorge Naranjo",10);
+        
+                
+       /* 
+        ArrayList<Libro> listaLibro = new ArrayList<Libro>();
+        listaLibro.add(new Libro("Español", "Matematica",1,"Calculo"));
+        listaLibro.add(new Libro("Español","Sistemas",2,"Linux"));
+        listaLibro.add(new Libro("Español","Sistemas",3,"JAVA"));
+        listaLibro.add(new Libro("Español","Fisica",2,"Teoria electromagnetica"));
+        listaLibro.add(new Libro("Español","Quimica",2,"Quimica Organica"));
+        
+        ArrayList<AudioVisuales> listaAV = new ArrayList<AudioVisuales>();
+        listaAV.add(new AudioVisuales(2,6,"Documental 'La Naturaleza'"));*/
+    
     public static void menu(){
         ArrayList<Estudiante> estudiante = new ArrayList();
         Scanner entrada = new Scanner(System.in);
@@ -13,7 +34,7 @@ public class EjecutaBiblioteca {
         
         do{
             System.out.println("..*MENU*..");
-            System.out.println("1. Ingrese un alumno de una carrera");
+            System.out.println("1. Ingrese un alumno a una carrera");
             System.out.println("2. Crear un prestamo");
             System.out.println("3. Reportes por estudiante");
             System.out.println("4. Salir");
@@ -23,17 +44,28 @@ public class EjecutaBiblioteca {
                 case 1:
                     String cedula;
                     boolean validar;
+                    String nombre, genero;
                     entrada.nextLine();
                     System.out.print("Ingrese un numero de cédula del estudiante nuevo: ");
                     cedula = entrada.nextLine();
-                    Estudiante est = new Estudiante(cedula,"juan","masculino");
-                    List<Estudiante> estud = new ArrayList<Estudiante>();
+                    System.out.print("Ingrese el nombre del estudiante: ");
+                    nombre=entrada.nextLine();
+                    System.out.print("Ingrese el genero del estudiante: ");
+                    genero=entrada.nextLine();
+                    Estudiante est = new Estudiante(cedula,nombre,genero);
+                    ArrayList<Estudiante> listaEstudiante = new ArrayList();
                     validar=est.validarCedula(cedula);
+                    listaEstudiante.add(est);
         
                     if(validar){
                         System.out.println("La cedula es valida");
+                        
+                        
+                        for(Estudiante a: listaEstudiante){
+                            System.out.println(a.getNombre()+" "+a.getCedula()+" "+a.getGenero());
+                        }
                     }else{
-                    System.out.println("La cedula no es valida");
+                    System.out.println("El numero cedula no es valido");
                     }
                     break;                    
                 case 2:
@@ -53,31 +85,24 @@ public class EjecutaBiblioteca {
         }while(opcion!=4);
     }
     
-    public static void llenarE(Estudiante[] estud){
-        Scanner sc = new Scanner(System.in);
-        String nom, cc, gen;
-        for(int i=0; i<estud.length;i++){
-            System.out.println("Nombre Estudiante No "+(i+1));
-            nom = sc.nextLine();
-            System.out.println("Cedula Estudiante No "+(i+1));
-            cc = sc.nextLine();
-            System.out.println("Estudiante No "+(i+1));
-            gen= sc.nextLine();
-            estud[i] =  new Estudiante(cc,nom,gen);
-            //limpia el buffer
-            sc.nextLine();
-        }  
-    } 
+    public static void addEstudiante(String carrera, Estudiante alumno){
+        Scanner entrada = new Scanner(System.in);
+        ArrayList<Estudiante> listaEstudiante =new ArrayList<Estudiante>();
+        
+    }
     
     public static void main(String[] args) {
         
+        /*aqui estaba originalmente, pero para poder usar, se instancia como globales
+        ArrayList<Libro> listaLibro = new ArrayList<Libro>();
+        listaLibro.add(new Libro("Español", "Matematica",1,"Calculo"));
+        listaLibro.add(new Libro("Español","Sistemas",2,"Linux"));
+        listaLibro.add(new Libro("Español","Sistemas",3,"JAVA"));
+        listaLibro.add(new Libro("Español","Fisica",2,"Teoria electromagnetica"));
+        listaLibro.add(new Libro("Español","Quimica",2,"Quimica Organica"));
         
-        /*Carreras listaCarreras[]=new Carreras[5];
-        listaCarreras[0]=new Carreras("Ingenieria en Tecnolias de la Informacion","Ernesto Salvador",10);
-        listaCarreras[1]=new Carreras("Economia","Diana Checa",8);
-        listaCarreras[2]=new Carreras("Licenciatura en Educacion Inicial","Diego Cornejo",8);
-        listaCarreras[3]=new Carreras("Licenciatura en Idiomas","Santiago Icaza",8);
-        listaCarreras[4]=new Carreras("Turismo","Jorge Naranjo",10);*/
+        ArrayList<AudioVisuales> listaAV = new ArrayList<AudioVisuales>();
+        listaAV.add(new AudioVisuales(2,6,"Documental 'La Naturaleza'"));*/
         
         menu();
     }
