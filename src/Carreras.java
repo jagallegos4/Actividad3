@@ -25,13 +25,13 @@ public class Carreras {
         return duracionCarrera;
     }
     
-    public void agregarEstudianteACarrera(Estudiante estudiante1){
+    /*public void agregarEstudianteACarrera(Estudiante estudiante1){
         listaE.add(estudiante1);
-    }
-    
-    /*public static void addEstudiante(ArrayList<Estudiante> listadoE){
-        this.listadoE=listadoE;        
     }*/
+    
+    public void addEstudiante(ArrayList<Estudiante> listadoE){
+        this.listaE=listadoE;        
+    }
     
     /*public void mostrarEstudiante(){
         System.out.println("Lista de Estudiantes");

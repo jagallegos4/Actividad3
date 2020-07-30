@@ -1,17 +1,25 @@
 
-public class AudioVisuales extends Material{
-    
-    private int duracion;
+public class AudioVisuales{
+    private String TituloAV;
+    private int duracion, codigoAV;
 
-    public AudioVisuales(int duracion, int codigo, String titulo) {
-        super(codigo, titulo);
+    public AudioVisuales(String TituloAV, int duracion, int codigoAV) {
+        this.TituloAV = TituloAV;
         this.duracion = duracion;
+        this.codigoAV = codigoAV;
+    }
+
+    public String getTituloAV() {
+        return TituloAV;
     }
 
     public int getDuracion() {
         return duracion;
     }
-    
+
+    public int getCodigoAV() {
+        return codigoAV;
+    }
     
     
 }

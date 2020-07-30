@@ -1,6 +1,4 @@
 
-import java.util.ArrayList;
-
 
 public class Estudiante {
     private String cedula, nombre, genero;

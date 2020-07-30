@@ -5,12 +5,14 @@ public class Prestamo {
     private Date fechaPrestamo;
     private Date fechaDevolucion;
     private Date fechaEntrega;
+    private Estudiante estudiante;
     boolean atraso;
 
-    public Prestamo(Date fechaPrestamo, Date fechaDevolucion, Date fechaEntrega, boolean atraso) {
+    public Prestamo(Date fechaPrestamo, Date fechaDevolucion, Date fechaEntrega, Estudiante estudiante, boolean atraso) {
         this.fechaPrestamo = fechaPrestamo;
         this.fechaDevolucion = fechaDevolucion;
         this.fechaEntrega = fechaEntrega;
+        this.estudiante = estudiante;
         this.atraso = atraso;
     }
 
